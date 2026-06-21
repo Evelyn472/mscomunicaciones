@@ -86,10 +86,11 @@ public class ComunicacionService {
                 .stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-  public List<ComunicacionResponseDTO> buscarPorEstudiante(Long estudianteId) {
+    public List<ComunicacionResponseDTO> buscarPorEstudiante(Long estudianteId) {
         return comRepository.buscarPorEstudianteOrdenado(estudianteId)
                 .stream().map(this::mapToDTO).collect(Collectors.toList());
     }
+    
     public ComunicacionResponseDTO guardar(ComunicacionRequestDTO dto) {
         validarComponentesComunicacion(dto.getCursoId(), dto.getEstudianteId());
         
